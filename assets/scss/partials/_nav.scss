@@ -6,3 +6,168 @@
   include all global navigation styles here. 
 
 \* ---------------------------------------------- */
+.main-nav{
+	.menu{
+
+		>li{
+			float: left;
+			margin: 0 0.35em;
+			position: relative;
+			@include respond-to(1300){
+				margin: 0 1em;
+			}
+			&:hover{
+				ul{
+					display: block;
+				}
+			}
+			&.liLinkActive{
+				border-bottom: 3px solid #fff;
+			}
+			>a{
+				color: #fff;
+				padding: 1em 0.5em;
+				text-transform: uppercase;
+				font-family: $heading-font;
+				display: inline-block;
+				font-size: 0.875em;
+				@include respond-to(1300){
+					font-size: ms(0);
+				}
+				&:hover{
+					color: $base-color-light;
+				}
+			}
+			ul{
+				display: none;
+				top: 100%;
+				background-color: $base-color-dark;
+				padding: 0.7em 0;
+				min-width: 15em;
+				left: -0.25em;
+				position: absolute;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.5);
+				li{
+					a{
+						padding: 0.35em 1.2em;
+						color: #fff;
+						width: 100%;
+						font-family: $body-font;
+						display: block;
+						white-space: nowrap;
+						text-transform: uppercase;
+						font-size: 13px;
+					}
+					&:hover{
+						a{
+							background-color: $base-color;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+.mobile-nav{
+	text-align: center;
+	width: 0px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba($base-color-dark, 0);
+    z-index: -1;
+    color: #757575;
+    opacity: 0;
+    transition: all 200ms cubic-bezier(.84,1,.9,.2);
+    .show-menu &{
+    	opacity: 1;
+	    width: 100%;
+	    height: 100%;
+	    border-radius: 0px;
+	    z-index: 10;
+	    background-color: rgba($base-color-dark, 0.995);
+    }
+}
+.mobile-social{
+	display: inline-block;
+	margin: auto;
+	margin: 2em 0 1em;
+	@include respond-to(600){
+		margin: 3em 0 0;
+	}
+	.social-icon{
+		height: 2.5em;
+		width: 2.5em;
+		svg{
+			height: 2.5em;
+			width: 2.5em;
+		}
+	}
+}
+.mobile-nav__inner{
+	height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.mobile-nav__inner::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+}
+.mobile-nav{
+	.nav{
+		width: 90%;
+		margin: auto;
+		padding-top: 7.5em;
+		@include respond-to(600){
+			padding-top: 10em;
+		}
+	}
+	.menu{
+		text-align: center;
+		a{
+			color: #fff;
+			display: inline-block;
+			&:hover{
+				color: $base-color-light;
+			}
+		}
+		>li{
+			>a{
+				text-transform: uppercase;
+				padding: 0.35em 0;
+				font-size: ms(1);
+				@include respond-to(600){
+					padding: 0.5em 0;
+				}
+			}
+			ul{
+				li{
+					a{
+						padding: 0.25em 0;
+						font-family: $body-font-light;
+					}
+				}
+			}
+		}
+	}
+}
+.show-menu{
+	.menu{
+		animation: navFade 500ms cubic-bezier(.42,.95,.64,1) 400ms both;
+	}
+	.mobile-social{
+		animation: navFade 400ms cubic-bezier(.42,.95,.64,1) 600ms both;
+	}
+}
+@keyframes navFade{
+	0%{
+		opacity: 0;
+		transform: translateY(300px) scale(2);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}

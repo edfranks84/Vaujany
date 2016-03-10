@@ -1,0 +1,1006 @@
+////////////////////////////
+
+/*hero*/
+
+///////////////////////////
+
+@keyframes hero-text{
+	0%{
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero{
+	padding: 0;
+	width: 100%;
+	background:{
+		color: $base-color-dark;
+		size: cover;
+		repeat: no-repeat;
+		position: center top;
+	}
+	#s733832 &{
+		background-image: url("/vaujanyskicompany-com/_img/images/home-hero.jpg");
+	}
+}
+.hero-content{
+	max-width: 50em;
+	width: 90%;
+	margin: auto;
+	padding: 12em 0 10em;
+	padding: 32vh 0 22vh;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $heading-font;
+	line-height: 1;
+	.no-cssvhunit &{
+		padding: 12em 0 10em;
+		@include respond-to(480){
+			padding: 14em 0 11em;
+		}
+		@include respond-to(1100){
+			padding: 19em 0 17em;
+		}
+	}
+	.previewFrame &{
+		padding: 12em 0 10em;
+	}
+	&__wrap{
+		.cssanimations &{
+			opacity: 0;
+			transform: translateY(-100%) scale(5);
+		}
+		animation: hero-text 900ms cubic-bezier(.52,.29,.46,1.23) both 1800ms;
+	}
+	.eyebrow{
+		font-size: ms(1);
+		color: #fff;
+		margin-bottom: 0.75em;
+		@include respond-to(480){
+			font-size: ms(2);			
+			line-height: 1.8;
+			margin-bottom: 0;
+		}
+		@include respond-to(1100){
+			font-size: ms(3);
+		}
+	}
+	.hero-heading{
+		font-size: ms(4);
+		color: rgba($white, 0.85);
+		@include respond-to(480){
+			font-size: ms(6);
+		}
+		@include respond-to(1100){
+			font-size: ms(9);
+			color: rgba($white, 0.65);
+		}
+	}
+}
+
+
+section{
+	padding: 4em 2em;
+	width: 100%;
+	@include clearfix;
+	@include respond-to(768){
+		padding: 5.5em 3em;
+	}
+}
+.section-title{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	@include respond-to(380){
+		font-size: 16px;
+	}
+	.title-eyebrow{
+		line-height: 1;
+		font-family: $body-font;
+		margin-bottom: 0;
+		color: $lightGrey;
+	}
+	h1,h2,h4{
+		color: $base-color;
+		margin-top: 0;
+		line-height: 1;
+	}
+	h2{
+		font-size: ms(3);
+	}
+	@include respond-to(640){
+		h2{
+			font-size: ms(5);
+		}
+	}
+}
+
+
+////////////////////////////
+
+/*intro*/
+
+///////////////////////////
+
+.home-intro{
+	padding: 3em 2em;
+	@include respond-to(768){
+		padding: 5.5em 3em;
+	}
+}
+.intro-content{
+	max-width: 46em;
+	margin: auto;
+	text-align: center;
+	@include respond-to(768){
+		padding: 0 2em;
+	}
+	@include respond-to(1100){
+		margin: 0;
+		@include span(7 of 12);
+		text-align: left;
+		max-width: none;
+	}
+	@include respond-to(1400){
+		@include span(6 of 12);
+	}
+}
+.title-eyebrow{
+	line-height: 1;
+	font-family: $body-font;
+	margin-bottom: 0;
+	color: $lightGrey;
+}
+.intro-title{
+	text-transform: uppercase;
+	h1{
+		color: $base-color;
+		margin-top: 0;
+	}
+}
+.intro-image{
+	position: relative;
+	padding: 0 1em 3.5em;
+	max-width: 30em;
+	margin: auto;
+	@include respond-to(480){
+		padding: 0 2em 3.5em;
+	}
+	@include respond-to(1100){
+		@include span(5 of 12 last);
+		padding: 1.5em 2em;
+		max-width: none;
+	}
+	@include respond-to(1400){
+		@include span(6 of 12 last);
+	}
+	.intro-image__wrap{
+		position: relative;
+	
+		&:after{
+			content: "";
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			z-index: 1;
+			left: 0.5em;
+			top: 0.5em;
+			background-color: $base-color-dark;
+			@include respond-to(1100){
+				left: 1em;
+				top: 1em;
+			}			
+		}
+		img{
+			position: relative;
+			z-index: 2;
+			line-height: 0;
+		}
+	}
+}
+
+////////////////////////////
+
+/*accommodation carousel*/
+
+///////////////////////////
+
+.accommodation{
+	overflow: hidden;
+	background:{
+		color: #fff;
+		image: url("/vaujanyskicompany-com/_img/images/accomodation-bg.jpg");
+		size: cover;
+		repeat: no-repeat;
+		position: center top;
+	}
+	.button{
+		width: 100%;
+		text-align: center;
+		margin-top: 3em;
+	}
+	h2{
+		margin-bottom: 1em;
+	}
+}
+.accommodation-carousel{
+	width: 92%;
+	margin: auto;
+	max-width: 22.5em;
+	@include respond-to(600){
+		max-width: 73em;
+	}
+	>.owl-stage-outer{
+		overflow: visible;
+		>.owl-stage{
+			>.owl-item{
+				opacity: 0.35;
+				position: relative;
+				transition: transform 200ms linear;
+				transform: scale(0.93);
+				&.active{
+					opacity: 1;
+					transform: none;
+					box-shadow: 0 2px 6px 0 rgba($black, 0.1);
+					transition: transform 200ms linear;
+				}
+			}
+		}
+	}
+	>.owl-controls{
+		.owl-prev,.owl-next{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 2.5em;
+			width: 2.5em;
+			display: inline-block;
+			opacity: 0.55;
+			transition: opacity 200ms linear;
+			&:hover{
+				opacity: 0.75;
+			}
+			&:after{
+				content: "";
+				display: block;
+				height: 100%;
+				width: 100%;
+				background:{
+					size: contain;
+					position: 50% 50%;
+					repeat: no-repeat;
+				}
+			}
+		}
+		.owl-prev{
+			left: -3em;
+			background-image: url("/vaujanyskicompany-com/_img/images/svg/arrowCircle-left.svg");
+			@include respond-to(600){
+				left: -4em;
+			}
+		}
+		.owl-next{
+			right: -3em;
+			background-image: url("/vaujanyskicompany-com/_img/images/svg/arrowCircle-right.svg");
+			@include respond-to(600){
+				right: -4em;
+			}
+		}
+	}
+	.owl-dots{
+		display: none;
+	}
+}
+.accomodation-item{
+	position: relative;
+}
+.accommodation{
+	.accomodation-info{
+		position: absolute;
+		bottom: 0;
+		width: calc(100% - 3.5em);
+		transform: translateX(-50%);
+		left: 50%;
+		//background-image: linear-gradient(0deg, rgba(0,0,0,0.95), rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.0) 95%);
+		z-index: 3;	
+		text-align: center;
+		padding: 2em 0.5em 0.5em;
+		font-size: 14px;
+		@include respond-to(640){
+			font-size: 16px;
+		}
+	}
+}
+.accommodation-images{
+	// .owl-controls{
+	// 	position: absolute;
+	// 	bottom: 3em;
+	// }
+	.owl-item{
+
+		&:before{
+			padding-bottom:  100%;
+			content: "";
+			display: block;
+		}
+		&:after{
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 50%;
+			background-image: linear-gradient(0deg, rgba(0,0,0,0.95), rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.0) 95%);
+		}
+	}
+	.owl-prev,.owl-next{
+		position: absolute;
+		bottom: 10%;
+		width: 1.75em;
+		height: 1.75em;
+		padding: 0.5em;
+		background-color: $base-color;
+		opacity: 0.75;
+		transition: opacity 200ms linear;
+		&:hover{
+			opacity: 1;
+		}	
+		&:after{
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			background:{
+				size: contain;
+				position: 50% 50%;
+				repeat: no-repeat;
+			}
+		}		
+	}
+	.owl-prev{
+		left: 0;
+		&:after{
+			background-image: url("/vaujanyskicompany-com/_img/images/svg/arrow-left.svg");
+		}
+	}
+	.owl-next{
+		right: 0;
+		&:after{
+			background-image: url("/vaujanyskicompany-com/_img/images/svg/arrow-right.svg");
+		}
+	}
+}
+.accommodation{
+	.accomodation-info{
+		&__title{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: ms(1);
+			font-family: $heading-font;
+			line-height: 1.1;
+			margin-bottom: 5px;
+			@include respond-to(1100){
+				font-size: ms(2);
+			}
+		}
+		&__sleeps{
+			color: #fff;
+			font-family: $body-font;
+			font-size: ms(0);
+			margin-bottom: 0.25em;
+		}
+		&__link{
+			a{
+				color: #fff;
+				font-family: $heading-font-bold;
+				font-size: ms(0);
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+////////////////////////////
+
+/*explore banner*/
+
+///////////////////////////
+
+.explore{
+	padding: 4.5em 1.5em;
+	background:{
+		color: #fff;
+		image: url("/vaujanyskicompany-com/_img/images/explore-bg.jpg");
+		size: cover;
+		repeat: no-repeat;
+		position: right top;
+	}
+	@include respond-to(480){
+		padding: 4.8em 3em;
+	}
+}
+@keyframes explore-in{
+	0%{
+		transform: translateX(-300%);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+.explore-content{
+	background-color: rgba(255,255,255,.95);
+	padding: 4em 2em;
+	box-shadow: 0 6px 25px 0 rgba(0,0,0,0.2);
+	text-align: center;
+	border-bottom: 5px solid $base-color;
+	max-width: 29.5em;
+	.no-touch.css-animations &{
+		transform: translateX(-300%);
+	}
+	.in-view &{
+		animation: explore-in 800ms cubic-bezier(.17,.67,.58,1.35) both 200ms;
+	}
+	@include respond-to(550){
+		padding: 4em 3em;
+	}
+	@include respond-to(1010){
+		margin-left: span(1);
+		padding: 4.6em 4.1em;
+		background-color: #fff;
+	}
+	.button{
+		margin-bottom: 0;
+	}
+	.border-button{
+		margin-right: 5px;
+		@include respond-to(550){
+			margin-right: 0.5em;
+		}
+	}
+	.solid-button{
+		a{
+			border: 2px solid $base-color;
+			&:hover{
+				border-color: $base-color-light;
+			}
+		}
+	}
+}
+
+////////////////////////////
+
+/*Chose Us*/
+
+///////////////////////////
+
+.choose-us{
+	&__panel-wrap{
+		@include clearfix;
+	}
+	&__panel{
+		text-align: center;
+		max-width: 36em;
+		margin: 2em auto;
+		@include respond-to(1010){
+			@include span(4 of 12 inside 3);
+			margin: 0;
+		};
+		h4{
+			margin-top: 0.25em;
+			@include respond-to(1010){
+				margin-top: 0.75em
+			}
+		}
+	}
+	&.in-view{
+		.choose-us__panel{
+			animation: choose-fade 300ms ease-in 300ms both;
+			&:nth-child(2){
+				animation-delay: 500ms;
+			}
+			&:nth-child(3){
+				animation-delay: 700ms;
+			}
+		}
+	}
+}
+@keyframes choose-fade{
+	0%{
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.choose-icon{
+	width: 4em;
+	margin: auto;
+	height: auto;
+	fill: $base-color;
+	@include respond-to(1010){
+		width: 5em;
+	}
+	.choice &{
+		padding: 0.5em;
+	}
+}
+.activities{
+	padding: 0;
+	&-wrap{
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+////////////////////////////
+
+/*activity panels*/
+
+///////////////////////////
+
+.activity-panel{
+	background:{	
+		size: cover;
+		position: center;
+		repeat: no-repeat;
+	}
+	position: relative;
+	flex-basis: 100%;
+	overflow: hidden;
+	margin-bottom: 2px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	@include respond-to(640){
+		flex-basis: 50%;
+		margin-bottom: 0;
+	}
+	@include respond-to(1200){
+		flex-basis: 25%;
+	}
+	.no-flexbox &{
+		width: 100%;
+		@include respond-to(640){
+			float: left;
+			width: 50%;
+		}
+		@include respond-to(1200){
+			width: 25%;
+		}
+	}
+	&:after{
+			content: "";
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: background-color 200ms linear;
+			background-color: rgba($base-color, 0);
+		}
+	&:hover,.touchevents &{
+		&:after{
+			// content: "";
+			// height: 100%;
+			// width: 100%;
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			background-color: rgba($base-color, 0.8);
+		}
+		.activity-inner{
+			border-color: rgba(255,255,255,0.75);
+		}
+		.activity-text{
+			h1{
+				top: 0;
+				font-size: ms(2);
+				text-shadow: none;
+				@include respond-to(820){
+					font-size: ms(3);
+				}
+				@include respond-to(1400){
+					font-size: ms(4);
+				}
+			}
+			p{
+				top: 0; 
+				opacity: 1;
+			}
+		}
+	}
+	&:hover{
+		.activity-text{
+			p{
+				//top: 0;
+				// opacity: 1;
+				//display: block;	
+				animation: 300ms text-in linear both 200ms;
+			}
+		}
+	}
+}
+@keyframes text-in{
+	0%{
+		opacity: 0;
+		top: 50px;
+	}
+	10%{
+		transform: scale(1);
+	}
+	100%{
+		opacity: 1;
+		top: 0;
+		transform: scale(1);
+	}
+}
+.activity-content{
+	// position: absolute;
+	// top: 0.75em;
+	// bottom: 0.75em;
+	// left: 0.75em;
+	// right: 0.75em;
+	position: relative;
+	padding-bottom: 75%;
+	height: 0;
+	z-index: 2;
+	@include respond-to(640){
+		padding-bottom: 100%;
+	}
+	@include respond-to(820){
+		padding-bottom: 60%;
+	}
+	@include respond-to(1200){
+		padding-bottom: 100%;
+	}
+}
+.activity-inner{
+	position: absolute;
+	top: 0.75em;
+	bottom: 0.75em;
+	left: 0.75em;
+	right: 0.75em;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: border-color 500ms ease-in;
+    // .no-flexbox &{
+	   //  // transform: translateY(-50%);
+	   //  // top: 50%;
+	   //  // bottom: auto;
+	   //  height: calc(100% -1.5em);
+    // }
+}
+.activity-text{
+	padding: 0 1em;
+	@include respond-to(1400){
+		padding: 0 2em;
+	}
+	h1,p{
+		color: #fff;
+		margin-bottom: 0;
+		top: 50px;
+		position: relative;
+	}
+	h1{
+		transition: all 200ms linear;
+		text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+	}
+	p{
+		//display: none;
+		position: relative;
+		//transform: scale(0);
+		opacity: 0;
+		//transition: all 600ms ease-in;
+	}
+	.no-flexbox &{
+		position: absolute;
+		transform: translateY(-50%);
+	    top: 50%;
+	}
+}
+
+
+////////////////////////////
+
+/*testimonials and enquiry*/
+
+///////////////////////////
+
+.home-contact{
+	padding: 0;
+	@include respond-to(1010){
+		display: flex;
+		.no-flexbox &{
+			display: table;
+		}
+	}
+}
+.testimonials,.enquiry-box{
+	padding: 4.5em 1.75em;
+	background:{
+		size: cover;
+		position: center;
+		repeat: no-repeat;
+	}
+	@include respond-to(380){
+		padding: 3em 1em;
+	}
+	@include respond-to(1010){
+		width: 50%;
+		padding: 4.5em 1em;
+	}
+	h2{
+		font-size: ms(4);
+		max-width: 10em;
+		margin: auto;
+	}
+	.no-flexbox &{
+		@include respond-to(1010){
+			display: table-cell;
+		}
+	}
+}
+.testimonial-carousel,.enquiry-form{
+	margin: auto;
+	max-width: 38em;
+	margin-top: 2em;
+}
+.testimonials{
+	background-image: url("/vaujanyskicompany-com/_img/images/testimonial-bg.jpg");
+}
+.testimonials{
+	.owl-item{
+		padding: 1em 0.5em;
+		@include respond-to(480){
+			padding: 0 1em 1em 1em;
+		}
+	}
+}
+.testimonial-item{
+	background-color: #fff;
+	padding: 2em 1.5em;
+	box-shadow: 0 2px 11px 0 rgba(0,0,0,0.1);
+	@include respond-to(480){
+		padding: 3em 2.5em;
+	}
+	@include respond-to(1100){
+		padding: 4em 3em;
+	}
+	p{
+		font-family: $body-font-italic;
+		line-height: 1.8
+	}
+	h6{
+		font-family: $body-font-bold;
+		color: #666;
+	}
+}
+.enquiry-box{
+	background-image: url("/vaujanyskicompany-com/_img/images/enquiry-bg.jpg");
+	h2{
+		color: #fff;
+	}
+}
+.enquiry-form{
+	.inputset{
+		label{
+			display: none;
+		}
+		input,textarea{
+			background-color: rgba(255,255,255,0.2);
+			border: none;
+			color: rgba($white,.9);
+			&:focus{
+				background-color: #fff;
+				border: none;
+				color: $black;
+			}
+		}
+	}
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input::-moz-placeholder, textarea::-moz-placeholder {
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:-moz-placeholder, textarea:-moz-placeholder {   /* Older versions of Firefox */
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{
+		color: rgba($black,.75);
+	}
+	input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+		color: rgba($black,.75);
+	}
+	input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {   /* Older versions of Firefox */
+		color: rgba($black,.75);
+	}
+	input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
+		color: rgba($black,.75);
+	}
+	.inputset{
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+	.inputset:nth-of-type(1), .inputset:nth-of-type(2){
+		@include respond-to(380){
+			width: 49%;
+			float: left;
+		}
+	}
+	.inputset:nth-of-type(1){
+		margin-right: 2%;
+	}
+}
+
+////////////////////////////
+
+/*tweets and newsletter*/
+
+///////////////////////////
+
+.tweet-newsletter-wrap{
+	padding: 0;
+	@include respond-to(820){
+		display: flex;
+		.no-flexbox &{
+			display: table;
+		}
+	}
+}
+.tweets-wrap,.newsletter-wrap{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	background:{
+		postion: 50% 50%;
+		repeat: no-repeat;
+		size: cover;
+	}
+	@include respond-to(820){
+		width: 50%;
+	}
+	.no-flexbox &{
+		display: table-cell;
+	}
+	>div{
+		width: 100%;
+		padding: 2em;
+		@include respond-to(600){
+			width: 50%;
+			padding: 2.75em;
+		}
+		@include respond-to(820){
+			width: 100%;
+		}
+		@include respond-to(1200){
+			width: 50%;
+		}
+		.no-flexbox &{
+			float: right;
+		}
+		.section-title{
+			text-align: left;
+			margin-bottom: 2.4em;
+			p,h4{
+				color: #fff;
+			}
+		}
+	}
+}
+.tweets-wrap{
+	background-image: url("/vaujanyskicompany-com/_img/images/tweets-bg.jpg");
+}
+.newsletter-wrap{
+	background-image: url("/vaujanyskicompany-com/_img/images/newsletter-bg.jpg");
+	justify-content: flex-start;
+	@include respond-to(820){
+		justify-content: flex-end;
+	}
+}
+.tweet-box{
+	background-color: rgba($base-color-light, 0.9);
+}
+.newsletter-box{
+	background-color: rgba($base-color, 0.9);
+}
+.newsletter-form{
+	label{
+		display: none;
+	}
+	input[type="text"],input[type="email"]{
+		border: none;
+		background-color: rgba(0,0,0,0.22);
+		padding: 0.75em 1em;
+		margin-bottom: 0.8em;
+		&:focus{
+			background-color: #fff;
+		}
+	}
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input::-moz-placeholder, textarea::-moz-placeholder {
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:-moz-placeholder, textarea:-moz-placeholder {   /* Older versions of Firefox */
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+		color: rgba($white,.75);
+		line-height: 1.5;
+	}
+	input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{
+		color: rgba($black,.75);
+	}
+	input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+		color: rgba($black,.75);
+	}
+	input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {   /* Older versions of Firefox */
+		color: rgba($black,.75);
+	}
+	input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
+		color: rgba($black,.75);
+	}
+	.form_submit{
+		text-align: left;
+	}
+}
+#tweets{
+	.tweet,.interact{
+		color: #fff;
+		font-family: $body-font-italic;
+		a{
+			color: #fff;
+			word-wrap: break-word;
+		}
+		img{
+			display: none;
+		}
+	}
+}
+.interact{
+	a{
+		margin-right: 1em;
+		font-family: $body-font-bold;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+#tweets{
+	.owl-dots{
+		text-align: left;
+	}
+	.owl-dot{
+		background-color: rgba($white, 0.5);
+		margin: 10px 10px 0 0;
+		&.active{
+			background-color: rgba($white, 1);
+		}
+	}
+}

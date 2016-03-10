@@ -7,48 +7,166 @@
 
 \* ---------------------------------------------- */
 
-h1, h2, h3, h4, h5, h6{
+@font-face {
+    font-family: 'Overpass-Bold';
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Bold.eot'); /* IE9 Compat Modes */
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Bold.woff') format('woff'), /* Modern Browsers */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Bold.svg#Overpass-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+}
 
+@font-face {
+    font-family: 'Overpass';
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Regular.eot'); /* IE9 Compat Modes */
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Regular.woff') format('woff'), /* Modern Browsers */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Regular.svg#Overpass-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: 'Overpass-Light';
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Light.eot'); /* IE9 Compat Modes */
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Light.woff') format('woff'), /* Modern Browsers */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Light.svg#Overpass-Light') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Overpass-Lightitalic';
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Lightitalic.eot'); /* IE9 Compat Modes */
+    src: url('/vaujanyskicompany-com/_img/fonts/Overpass-Lightitalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Lightitalic.woff') format('woff'), /* Modern Browsers */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Lightitalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/vaujanyskicompany-com/_img/fonts/Overpass-Lightitalic.svg#Overpass-Lightitalic') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  	font-family: 'Montserrat-Regular';
+  	src: url('/vaujanyskicompany-com/_img/fonts/Montserrat-Regular.eot');
+  	src: url('/vaujanyskicompany-com/_img/fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Regular.woff') format('woff'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Regular.ttf') format('truetype'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  	font-family: 'Montserrat-Bold';
+  	src: url('/vaujanyskicompany-com/_img/fonts/Montserrat-Bold.eot');
+  	src: url('/vaujanyskicompany-com/_img/fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Bold.woff') format('woff'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('/vaujanyskicompany-com/_img/fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $heading-font;
+	font-weight: normal;
+	line-height: 1.2;
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
+	color: $black;
+	&:first-child{
+		margin-top: 0;
+	}
 }
 
 h1{
-
+	font-family: $heading-font-bold;
+	font-size: ms(4);
+	text-transform: uppercase;
+	// @include respond-to(480){
+	//     font-size: ms(5);
+	//   }
+	// @include respond-to(640){
+	// 	font-size: ms(6);
+	// }
+	// @include respond-to(920){
+	// 	font-size: ms(7);
+	// }
+	@include respond-to(1200){
+		font-size: ms(5);
+	}
+  
 }
 
 h2{
-
+	font-family: $heading-font;
+	font-size: ms(4);
+	text-transform: uppercase;
+	@include respond-to(600){
+    font-size: ms(5);
+  }
 }
 
 h3{
-
+	font-family: $heading-font;
+	font-size: ms(3);
+	text-transform: uppercase;
+  @include respond-to(600){
+    font-size: ms(4);
+  }
 }
 
 h4{
-
+	font-family: $heading-font;
+	font-size: ms(2);
+	text-transform: uppercase;
+  @include respond-to(600){
+    font-size: ms(3);
+  }
 }
 
 h5{
-
+	font-family: $heading-font;
+	font-size: ms(1);
+	line-height: 1.4;
+	text-transform: uppercase;
+  @include respond-to(600){
+    font-size: ms(2);
+  }
 }
 
 h6{
-
+	font-family: $body-font;
+	font-size: ms(0);
+	line-height: 1.4;
+  @include respond-to(600){
+    font-size: ms(1);
+  }
 }
-
 p{
-	margin-bottom: ms(2);
-
+	font-size: 15px;
+	font-family: $body-font-light;
+	line-height: 1.7;
+	margin: 0.65em 0 1em;
+	color: $black;
 	&:last-child{
 		margin-bottom: 0;
 	}
 }
 
-strong{
-	// change if using @fontface
-	font-weight: bold;
-}
-
-em{
-	// change if using @fontface
-	font-style: italic;
+.bold,strong{
+	font-family: $body-font-bold;
 }

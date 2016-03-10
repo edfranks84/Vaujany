@@ -23,19 +23,34 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 // Base font attributes ---- //
 
-$base-font-family: ;
+$base-font-family: 'Overpass', arial, sans-serif;;
 $base-font-size: 16;
 $base-line-height: 1.6;
 $blockquote: #e3e3e3;
 
+$heading-font: 'Montserrat-Regular', arial, sans-serif;
+$heading-font-bold: 'Montserrat-Bold', arial, sans-serif;
+$body-font: 'Overpass', arial, sans-serif;
+$body-font-light: 'Overpass-Light', arial, sans-serif;
+$body-font-bold: 'Overpass-Bold', arial, sans-serif;
+$body-font-italic: 'Overpass-Lightitalic', arial, sans-serif;
+
 // Base colours ---- //
 
 $white: #FFFFFF;
-$black: #2f2f2f;
-$base-color: #61459b;
-$comp-color: #326e50;
-$lightGrey: #CCCCCC;
+$black: #111;
+$base-color: #006da6;
+$base-color-dark: #003b59;
+$base-color-light: #18a8f2;
+$comp-color: #a65d00;
+$comp-color-dark: #593200;
+$lightGrey: #aaa;
 
-$link: blue;
-$link-hover: green;
-$link-focus: purple;
+$link: $base-color;
+$link-hover: $base-color-light;
+$link-focus: $base-color-light;
+
+// Brand-Colours //
+
+$facebook: #3b5998;
+$twitter: #55acee;

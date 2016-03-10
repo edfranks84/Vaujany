@@ -59,6 +59,7 @@
 ----------------------------------------- */
 
 @import "reset";
+@import "sanitize";
 
 /* -----------------------------------------
 	7.0. Base
@@ -94,10 +95,22 @@
 	12.0. Content
 ----------------------------------------- */
 
-@import "content";
-
-
+@import "form";
 @import "buttons";
+//@import "tabulous";
+@import "owlCarousel";
+@import "slick";
+@import "tabslet";
+@import "paper-collapse";
+@import "animsition";
+@import "magnific";
+@import "home";
+@import "content";
+@import "accommodation";
+@import "backgrounds";
+@import "blog";
+
+
 
 /* -----------------------------------------
 	13.0. Footer

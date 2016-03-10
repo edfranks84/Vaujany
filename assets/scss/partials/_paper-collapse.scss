@@ -1,0 +1,104 @@
+/*!
+  Paper Collapse v0.4.0
+
+  Collapsible paper cards.
+
+  Made with love by bbo - ©2015 Alexander Rühle
+  MIT License http://opensource.org/licenses/MIT
+*/
+
+
+// Font
+$text-color: #404040 !default;
+
+$light-gray: #eee;
+$mid-gray: #777;
+$dark-gray: #333 !default;
+
+@mixin raise-2 {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.08), 0 3px 12px 0 rgba(0, 0, 0, 0.05);
+  z-index: 200;
+}
+
+.faq-wrap{
+	padding-top: 2em;
+}
+.collapse-card {
+  background-color: #f9f9f9;
+  color: $black;
+  transition: all ease 400ms;
+  margin: 3px 0;
+  &.active {
+    @include raise-2;
+    margin: 0.75em -1em;
+    border-bottom: 1px solid #e8e8e8;
+	
+    .collapse-card__heading{
+      &::after {
+        //content: "\D7"; // compress icon
+        color: #fff;
+        transform: translateY(-50%) rotate(405deg);
+      }
+    }
+  }
+
+  .collapse-card__heading{
+    &::after {
+      content: "\2B"; // expand icon
+    }
+  }
+}
+
+.collapse-card__heading {
+  cursor: pointer;
+  @include clearfix;
+  padding: 1.3em 1em 1em;
+  position: relative;
+  border: 1px solid #ddd;
+  .active &{
+  	border-color: $base-color-dark;
+  	background-color: $base-color-dark;
+  }		
+  i {
+    float: left;
+  }
+
+  &::after {
+    color: $text-color;
+    transition: all 800ms ease-out;
+    //font-family: 'FontAwesome';
+    font-size: 2em;
+    line-height: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 53%;
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+.collapse-card__title {
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 0 2rem 0 0;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: .4em;
+  font-family: $body-font;
+  color: $black;
+  @include respond-to(480){
+  	font-size: ms(0);
+  }
+  .active &{
+  	color: #fff;
+  }
+}
+
+.collapse-card__body {
+  padding: 1.5em;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-top: 0;
+}

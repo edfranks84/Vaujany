@@ -1,0 +1,243 @@
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba($base-color-dark, 0.45);
+	padding: 0.25em 1em;
+	z-index: 5;
+	.show-menu &{
+		z-index: 11;
+		background-color: rgba($base-color-dark, 0.7);
+	}
+	svg{
+		max-width: 100%;
+		height: auto;
+	}
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond-to(480){
+		padding: 0.25em 1.5em;
+    }
+    @include respond-to(1300){
+		padding: 0.25em 1.5em;
+    }
+}
+.main-logo{
+	display: inline-block;
+	vertical-align: middle;
+	width: 9em;
+	padding: 0.25em 0;	
+	@include respond-to(1300){
+		width: 11em;
+	}
+	// svg{
+	// 	fill: transparent;
+ //  		transition: all 200ms ease-in; 
+ //  		.a{
+	// 		fill:transparent;
+	// 		stroke: #fff;
+	// 	}
+	// }
+}
+
+// .in svg .a{
+//   fill: #fff;
+// }
+
+.main-nav{
+	display: none;
+	vertical-align: middle;
+	@include respond-to(1010){
+		display: inline-block;
+	}
+	.no-flexbox &{
+		width: calc(100% - 24em);
+		text-align: center;
+		.nav{
+			display: inline-block;
+		}
+	}
+}
+.header-social{
+	display: none;
+	vertical-align: middle;
+	@include respond-to(1010){
+		display: inline-block;
+	}
+	.no-flexbox &{
+		width: 10em;
+	}
+}
+.social-icon{
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	display: inline-block;
+	transition: transform 300ms cubic-bezier(.46,.25,.42,1.45);
+	svg{
+		height: 2em;
+		width: 2em;
+		fill: #fff;
+		border-radius: 50%;
+	}
+	@include respond-to(1300){
+		height: 2.5em;
+		width: 2.5em;
+		margin-left: 0.5em;
+		svg{
+			height: 2.5em;
+			width: 2.5em;
+		}
+	}
+	&:hover{
+		transform: scale(1.2);
+	}
+	.mail-icon{
+		&:hover{
+			fill: $base-color-light;
+			box-shadow: 0 1px 8px 0 rgba($white, 0.12);
+		}
+	}
+	.facebook-icon{
+		&:hover{
+			fill: $base-color-light;
+			box-shadow: 0 1px 8px 0 rgba($white, 0.12);
+		}
+	}
+	.twitter-icon{
+		&:hover{
+			fill: $base-color-light;
+			box-shadow: 0 1px 8px 0 rgba($white, 0.12);
+		}
+	}
+}	
+
+.nav-button{
+	display: inline-block;
+	cursor: pointer;
+	@include respond-to(1010){
+		display: none;
+	}
+}
+
+.burger {
+  width: 30px;
+  height: 5px;
+  background: white;
+  position: relative;
+  border-radius: 5px;
+  margin: 0 auto;
+  //top: 20px;
+  transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+  transform-origin: 100% 0%;
+  &:before {
+    content: '';
+    width: 33px;
+    height: 5px;
+    background: white;
+    position: relative;
+    display: block;
+    top: -10px;
+     border-radius: 5px;
+        transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+  }
+  &:after {
+    content: '';
+    width: 36px;
+    height: 5px;
+    background: white;
+    position: relative;
+    display: block;
+    top: 5px;
+    border-radius: 5px ;
+        transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+  }
+}
+
+.show-menu .burger {
+  transform: scale(1.25);
+  border-radius: 200%;
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: 4px solid white;
+  transform-origin: 50% 0%;
+  top: -5px;
+  padding-top: 14px;
+  padding-left: 3px;
+  transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+
+  &:before {
+  	width: 30px;
+    transform: rotate(45deg) scale(.8);
+    transform-origin: 45% 9%;
+    top: 0;
+    opacity: 1;
+    transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+  }
+  &:after {
+  	width: 30px;
+    transform: rotate(-45deg) scale(.8);
+    transform-origin: 25% 0%;
+    top: 0;
+    opacity: 1;
+    transition: .3s all cubic-bezier(.17,.67,.1,1.23);
+
+  }
+}
+
+////////////////////////////////////////
+
+/*Headhesive*/
+
+////////////////////////////////////////
+
+@keyframes logo-turn{
+	0%{
+		opacity: 0;
+		transform: rotate3d(1, 0, 0, 90deg);
+	}
+	100%{
+		opacity: 1;
+		transform: rotate3d(1, 0, 0, 0deg);
+	}
+}
+
+.headhesive{
+	perspective: 1200px;
+	perspective-origin: bottom center;
+	opacity: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	transform: translateY(-100%);
+	transition: all 300ms ease-in-out;
+	font-size: 13px;
+	z-index: 100;
+	.main-logo{
+		width: 9em;
+		transform-origin: 50% 0%;
+		transition: all 800ms ease-in 600ms;
+	}
+	&--unstick{
+		.main-logo{
+			//transform: translateX(-300%);
+			opacity: 0;
+		}
+	}
+	&--stick{
+		transform: translateY(0);
+		opacity: 1;
+		background-color: rgba($base-color-dark,0.95);
+		.main-logo{
+			//transform: translateX(0);
+			opacity: 1;
+			//animation: logo-rotate 900ms ease 600ms both;
+			animation: logo-turn 900ms cubic-bezier(.17,.67,.6,1.49) 600ms both;
+		}
+	}
+
+}

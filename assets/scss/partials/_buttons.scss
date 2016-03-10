@@ -52,3 +52,70 @@
 		@include button-size(em(16), ms(16), em(16), 1.2, 0);
 	}
 }
+
+.button{
+	margin: 1em 0;
+	display: inline-block;
+	a,span{
+		display: inline-block;
+		padding: 0.8em 1em 0.75em;
+		font-size: ms(0);
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $heading-font-bold;
+		line-height: 1;		
+		transition: all 300ms linear;
+	}
+}
+.button-small{
+	font-size: ms(-1);
+}
+.border-button{
+	a,span{
+		background-color: transparent;
+		border: 2px solid $base-color;
+		color: $base-color;
+	}
+	&:hover{
+		a,span{
+			background-color: $base-color;
+			color: #fff;
+		}
+	}
+	&.white{
+		a,span{
+			border-color: #fff;
+			color: #fff;
+		}
+		&:hover{
+			a,span{
+				color: $base-color;
+				background-color: #fff;
+			}
+		}
+	}
+}
+.solid-button{
+	a,span{
+		background-color: $base-color;
+		color: #fff;
+	}
+	&:hover{
+		a,span{
+			background-color: $base-color-light;
+		}
+	}
+	&.white{
+		a,span{
+			background-color: #fff;
+			color: $base-color;
+		}
+		&:hover{
+			a,span{
+				background-color: rgba($black, 0.5);
+				background-color: $base-color-dark;
+				color: #fff;
+			}
+		}
+	}
+}

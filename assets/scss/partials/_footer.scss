@@ -1,0 +1,155 @@
+footer{
+	@include clearfix;
+	padding: 3.5em 2em;
+	font-size: 14px;
+	width: 100%;
+	overflow-x: hidden;
+	background:{
+		image: url("/vaujanyskicompany-com/_img/images/footer-bg.jpg");
+		size: cover;
+		position: 50% 50%;
+		repeat: no-repeat;
+	}
+	text-align: center;
+	>div{
+		display: inline-block;
+	}
+	@include respond-to(640){
+		padding: 3.5em 3em;
+	}
+	@include respond-to(1100){
+		padding: 5.5em 3em;
+		font-size: 16px;
+		text-align: left;
+		>div{
+			display: block;
+		}
+	}
+	a{
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-word;
+		hyphens: auto;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+.footer-title{
+	color: #fff;
+	text-transform: uppercase;
+	font-family: $heading-font;
+	border-bottom: 2px solid #fff;
+	line-height: 2.5;
+	margin-bottom: 1em;
+}
+.footer-links{
+	@include respond-to(920){
+		@include span(3 of 12);
+		margin-top: 3.4em;
+	}
+	@include respond-to(1100){
+		@include span(2 of 12);
+	}
+}
+
+.footer-center{
+	width: 100%;
+	margin: 2em 0;
+	@include respond-to(920){
+		@include span(6 of 12);
+	}
+	@include respond-to(1100){
+		@include span(8 of 12);
+	}
+	text-align: center;
+}
+
+.footer-social{
+	@include respond-to(920){
+		@include span(3 of 12 last);
+		margin-top: 3.4em;
+	}
+	@include respond-to(1100){
+		@include span(2 of 12 last);
+	}
+}
+.link-list{
+	a{
+		color: #fff;
+	}
+	li{
+		margin-bottom: 0.5em;
+	}
+}
+.footer-logo{
+	text-align: center;
+	margin-bottom: 2em;
+	img{
+		max-width: 15.6em;
+	}
+}
+.footer-contact{
+	text-align: center;
+	margin-bottom: 1em;
+	@include respond-to(1100){
+		margin-bottom: 2em;
+	}
+}
+.footer-phone{
+	margin-right: 1.5em;
+}
+.footer-phone,.footer-email{
+	display: inline-block;
+	white-space: nowrap;
+	font-size: 12px;
+	@include respond-to(380){
+		font-size: 16px;
+	}
+	svg{
+		fill: #fff;
+		display: inline-block;
+		margin-right: 7px;
+		width: 1.25em;
+		height: 1.25em;
+		vertical-align: middle;
+		position: relative;
+		top: -4px;
+		@include respond-to(1100){
+			top: -2px;
+		}
+	}
+	h5,a{
+		color: #fff;
+		text-transform: lowercase;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		font-family: $body-font;		
+	}
+	// a:hover{
+	// 	text-decoration: underline;
+	// }
+}
+.footer-info{
+	p,a{
+		color: #fff;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}
+.footer-social{
+	.social-icon{
+		height: 3.4em;
+		width: 3.4em;
+		svg{
+			height: 3.4em;
+			width: 3.4em;
+		}
+		&:nth-child(1){
+			margin-right: 0.5em;
+		}
+	}
+}
