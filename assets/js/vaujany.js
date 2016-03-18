@@ -286,6 +286,34 @@ a.attr("style"))});m.css("display","block");d.byRow&&(g.each(function(){var a=c(
 ""):(e.each(function(){var a=c(this),b={display:"inline-block"===a.css("display")?"inline-block":"block"};b[d.property]="";a.css(b);a.outerHeight(!1)>f&&(f=a.outerHeight(!1));a.css("display","")}),e.each(function(){var a=c(this),b=0;"border-box"!==a.css("box-sizing")&&(b+=h(a.css("border-top-width"))+h(a.css("border-bottom-width")),b+=h(a.css("padding-top"))+h(a.css("padding-bottom")));a.css(d.property,f-b)}))});m.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||null)});b._maintainScroll&&
 c(window).scrollTop(l/f*c("html").outerHeight(!0));return this};b._applyDataApi=function(){var a={};c("[data-match-height], [data-mh]").each(function(){var b=c(this),d=b.attr("data-match-height")||b.attr("data-mh");a[d]=d in a?a[d].add(b):b});c.each(a,function(){this.matchHeight(!0)})};var q=function(a){b._beforeUpdate&&b._beforeUpdate(a,b._groups);c.each(b._groups,function(){b._apply(this.elements,this.options)});b._afterUpdate&&b._afterUpdate(a,b._groups)};b._update=function(a,e){if(e&&"resize"===
 e.type){var d=c(window).width();if(d===n)return;n=d}a?-1===f&&(f=setTimeout(function(){q(e);f=-1},b._throttle)):q(e)};c(b._applyDataApi);c(window).bind("load",function(a){b._update(!1,a)});c(window).bind("resize orientationchange",function(a){b._update(!0,a)})})(jQuery);
+// mediaWrapper.js: Simple responsive iframes
+// MIT license http://www.opensource.org/licenses/mit-license.php/
+// @author Matthew A. K. Smith http://www.akselkreis.com
+
+(function( $ ){
+
+  $.fn.mediaWrapper = function(options) {
+
+    var settings = $.extend( {
+      intrinsic   : true,
+      baseWidth   : 16,
+      baseHeight  : 9
+    }, options);
+
+    return this.each(function() {
+      var hRatio = '';
+
+      if (settings.intrinsic == true && $(this).attr("width") !== '' && $(this).attr("height") !== ''){
+        hRatio = ($(this).attr("height") / $(this).attr("width")) * 100;
+      } else {
+        hRatio = (settings.baseHeight / settings.baseWidth) * 100;
+      }
+
+      $(this).wrap('<div class="mediaWrapper" style="position: relative; width: 100%; height: 0; padding: '+ hRatio +'% 0 0 0; " />').css({"position":"absolute","width":"100%","height":"100%","top":"0","left":"0"});
+    });
+  };
+})( jQuery );
+
 /**
  * Tabslet | tabs jQuery plugin
  *

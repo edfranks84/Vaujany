@@ -257,6 +257,13 @@
 // 		}
 // 	}
 // }
+.image-banner{
+	background:{
+		size: cover;
+		position: bottom center;
+		repeat: no-repeat;
+	}
+}
 
 /*///////////////////////////////////////
 
@@ -361,42 +368,132 @@ GETTING HERE
 		}
 	}
 }
-.transfer{
+.transfer, .order-pass{
 	background:{
 		size: cover;
 		repeat: no-repeat;
 		position: top center;
-		image: url("/vaujanyskicompany-com/_img/images/transfer-bg.jpg")
+		//image: url("/vaujanyskicompany-com/_img/images/transfer-bg.jpg");
 	}
 	.main-content{
 		&__image{
 			display: none;
-			@include span(5 of 12 last);
-			img{
-				box-shadow: -25px 25px 0 -10px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2);
-			}
 			@include respond-to(1100){
 				display: block;
-				padding-top: 2em;
+			}
+		}
+		&__content{
+			@include respond-to(1100){
+				padding-top: 0;
+			}
+			@include respond-to(1400){
+				padding-top: 3em;
+			}
+		}
+	}
+}
+.main-content-wrap{
+	position: relative;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 2em;
+	@include respond-to(480){
+		padding: 3em;
+	}
+	@include respond-to(850){
+		padding: 5.5em 3em;
+		border-bottom: none;
+	}
+	.main-content{
+		&__image{
+			margin-bottom: 2em;
+			text-align: center;
+			max-height: 28em;
+    		overflow: hidden;
+			// img{
+			// 	box-shadow: -15px 15px 0 -7px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2);
+			// }
+			@include respond-to(850){
+				margin-bottom: 0;
+				max-height: none;
+				overflow: visible;
+				@include span(5 of 12);
+				//@include pre(1 of 12);
+				display: block;
+				//padding-top: 2em;
+				text-align: left;
+				img{
+					box-shadow: -25px 25px 0 -10px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2);
+				}
+			}
+			@include respond-to(1100){
+				@include pre(1 of 12);
 			}
 			@include respond-to(1200){
 				padding: 0;
+			}
+			&.image-right{
+				@include respond-to(850){
+					@include span(5 of 12 last);
+					//@include post(1 of 12);
+				}
+				@include respond-to(1100){
+					@include post(1 of 12);
+				}
 			}
 		}
 		&__content{
 			max-width: 46em;
 			margin: auto;
-			@include respond-to(1100){
-				@include span(6 of 12);
-				//padding-top: 3em;
-			}
-			@include respond-to(1400){
+			@include respond-to(850){
 				@include span(5 of 12);
+				//padding-top: 3em;
+				//@include pre(1 of 12);
+			}
+			@include respond-to(1025){
+				padding-top: 3em;
+			}
+			@include respond-to(1100){
+				@include span(4 of 12);
 				@include pre(1 of 12);
 				padding-top: 3em;
 			}
+			&.content-right{
+				@include respond-to(850){
+					@include span(5 of 12 last);
+					@include post(1 of 12);
+					//padding-top: 3em;
+				}
+
+				@include respond-to(1100){
+					@include span(4 of 12 last);
+					@include pre(0 of 12);
+					@include post(1 of 12);
+					padding-top: 3em;
+				}
+			}
+			.content-title{
+				font-size: 13px;
+				@include respond-to(1100){
+					font-size: 16px;
+				}
+			}
+
 		}
 	}
+	.inner-content__wrap{
+		@include respond-to(850){
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: span(5 of 12 0.1);
+		}
+		@include respond-to(1100){
+			width: span(4 of 12);
+		}
+	}
+}
+.transfer{
+	background-image: url("/vaujanyskicompany-com/_img/images/transfer-bg.jpg");
 }
 
 .by-plane{
@@ -418,7 +515,7 @@ GETTING HERE
 		}
 	}
 }
-table.plane-table{
+table.plane-table, table.vaujany-pass-table, table.alpeDHeuz-pass-table{
 	width: 100%;
 	border-collapse: collapse;
 	text-align: center;
@@ -441,4 +538,209 @@ table.plane-table{
 }
 .map-banner{
 	padding: 0;
+}
+
+/*///////////////////////////////////////
+
+Lift Passes
+
+///////////////////////////////////////*/
+
+.lift-passes{
+	position: relative;
+	.inner-text{
+		text-align: center;
+	}
+	.main-content__wrap{
+		max-width: 50em;
+	}
+}
+.pass-logos{
+	text-align: center;
+	img{
+		max-width: 12em;
+	}
+	@include respond-to(1250){
+		img{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 12em;
+			&:nth-child(1){
+				right: 83%;
+			}
+			&:nth-child(2){
+				left: 83%;
+			}
+		}
+	}
+}
+.order-pass{
+	background-image: url("/vaujanyskicompany-com/_img/images/order-pass-bg.jpg");
+	background-color: #fff;
+}
+.vaujany-pass, .alpeDHeuz-pass{
+	.content-wrap{
+		max-width: 50em;
+		margin: auto;
+	}
+	table{
+		font-size: 14px;
+		@include respond-to(480){
+			font-size: 16px;
+		}
+		p{
+			line-height: 1.2;
+		}
+	}
+	.info{
+		text-align: left;
+		p{
+			margin: 0;
+		}
+	}
+}
+.vaujany-pass{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+		image: url("/vaujanyskicompany-com/_img/images/vaujany-pass.jpg");
+		color: $base-color;
+	}
+	.content-wrap{
+		color: #fff;
+		p,a{
+			color: #fff;
+		}
+		a{
+			text-decoration: underline;
+		}
+	}
+}
+.alpeDHeuz-pass{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+		image: url("/vaujanyskicompany-com/_img/images/alpe-pass.jpg");
+		color: #fff;
+	}
+}
+table.alpeDHeuz-pass-table{
+	td,th{
+		border: 1px solid rgba(0,0,0,0.5);
+	}
+}
+
+
+/*///////////////////////////////////////
+
+Summer
+
+///////////////////////////////////////*/
+
+.summer-intro{
+	@include respond-to(850){
+		padding-bottom: 8.5em;
+	}
+	.main-content__image{
+		position: relative;
+		@include clearfix;
+		img{
+			&:nth-child(1){
+				z-index: 2;
+				position: relative;
+				box-shadow: none;
+				@include respond-to(850){
+					box-shadow: -3px 3px 0 3px #fff;
+					float: right;
+					width: 85%;
+				}
+			}
+			&:nth-child(2){
+				display: none;
+				z-index: 1;
+				position: absolute;
+				right: 78%;
+				top: 27%;
+				height: 90%;
+				width: auto;
+				box-shadow: -10px 10px 0 -3px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2);
+				@include respond-to(850){
+					display: block;
+				}
+				@include respond-to(850){
+					box-shadow: -15px 15px 0 -3px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+	}
+}
+.road-cycling{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+		image: url("/vaujanyskicompany-com/_img/images/summer/road-cycling-bg.jpg");
+		color: #f9f9f9;
+	}
+}
+.mountain-cycling{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+		image: url("/vaujanyskicompany-com/_img/images/summer/mountain-biking-bg.jpg");
+		color: $base-color-dark;
+	}
+	h1,p{
+		color: #fff;
+	}
+}
+.family-banner{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+		image: url("/vaujanyskicompany-com/_img/images/summer/family-bg.jpg");
+		color: #f9f9f9;
+	}
+}
+.family-activities{
+	.activity-panel{
+		@include respond-to(640){
+			flex-basis: 33.3%;
+			margin-bottom: 0;
+		}
+		@include respond-to(1200){
+			flex-basis: 33.3%;
+		}
+		.no-flexbox &{
+			width: 100%;
+			@include respond-to(640){
+				float: left;
+				width: 33.3%;
+			}
+			@include respond-to(1200){
+				width: 33.3%;
+			}
+		}
+	}
+}
+.activity-panel{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: top center;
+	}
+	&.swimming{
+		background-image: url("/vaujanyskicompany-com/_img/images/summer/swimming-pool.jpg");
+	}
+	&.skating{
+		background-image: url("/vaujanyskicompany-com/_img/images/summer/ice-rink.jpg");
+	}
+	&.bowling{
+		background-image: url("/vaujanyskicompany-com/_img/images/summer/bowling.jpg");
+	}
 }

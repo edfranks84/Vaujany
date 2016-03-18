@@ -2,10 +2,10 @@
 	position: relative;
 	header{
 		position: relative;
-		background-color: rgba($black, 0.9);
+		background-color: rgba($base-color-dark, 0.9);
 	}
 	&__content{
-		background-color: $base-color-dark;
+		background-color: $base-color;
 		padding: 3em 2em 2.8em;
 	}
 	&__title{

@@ -280,6 +280,42 @@ textarea {
 	7.0. Base
 ----------------------------------------- */
 /* ---------------------------------------------- *
+  Partial: grid
+
+  We're using Susy. Please visit http://susy.readthedocs.org/en/latest/install/
+
+  Due to using Susy, we're going to need the Ruby gems installed. Please a see a guide here: [TBD].
+
+  Usage
+  =====
+
+\* ---------------------------------------------- */
+/* - Index
+-------------------------------------------------
+  - Global defaults     ............................. 1.0.
+  - Grid makeup         ............................. 2.0.
+*/
+/* ---------------------------------------------- *  1.0 Global defaults
+\* ---------------------------------------------- */
+/* ---------------------------------------------- *  1.0 Grid makeup
+\* ---------------------------------------------- */
+.contain {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 1080px; }
+  .contain:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .contain--table {
+    display: table;
+    width: 100%;
+    max-width: 1080px;
+    min-width: 1080px;
+    margin: 0 auto; }
+
+/* ---------------------------------------------- *
   Partial: base
 
   Here you place the base defaults to any project
@@ -360,45 +396,24 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 .center-align {
   text-align: center; }
 
+@media (min-width: 51.25em) {
+  .columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2em;
+       -moz-column-gap: 2em;
+            column-gap: 2em; }
+    .columns p:first-child {
+      margin-top: 0; } }
+
+ul.disc li {
+  font-family: "Overpass-Light", arial, sans-serif;
+  list-style: disc; }
+
 /* -----------------------------------------
 	8.0. Grid
 ----------------------------------------- */
-/* ---------------------------------------------- *
-  Partial: grid
-
-  We're using Susy. Please visit http://susy.readthedocs.org/en/latest/install/
-
-  Due to using Susy, we're going to need the Ruby gems installed. Please a see a guide here: [TBD].
-
-  Usage
-  =====
-
-\* ---------------------------------------------- */
-/* - Index
--------------------------------------------------
-  - Global defaults     ............................. 1.0.
-  - Grid makeup         ............................. 2.0.
-*/
-/* ---------------------------------------------- *  1.0 Global defaults
-\* ---------------------------------------------- */
-/* ---------------------------------------------- *  1.0 Grid makeup
-\* ---------------------------------------------- */
-.contain {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 1080px; }
-  .contain:after {
-    content: " ";
-    display: block;
-    clear: both; }
-  .contain--table {
-    display: table;
-    width: 100%;
-    max-width: 1080px;
-    min-width: 1080px;
-    margin: 0 auto; }
-
 /* -----------------------------------------
 	9.0. Typography
 ----------------------------------------- */
@@ -4549,6 +4564,11 @@ section {
               transform: scale(1);
       opacity: 1; }
 
+.image-banner {
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat; }
+
 /*///////////////////////////////////////
 
 CONTACT US
@@ -4634,40 +4654,114 @@ GETTING HERE
     line-height: 1.8;
     font-family: "Overpass-Light", arial, sans-serif; }
 
-.transfer {
+.transfer, .order-pass {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  background-image: url("/vaujanyskicompany-com/_img/images/transfer-bg.jpg"); }
-  .transfer .main-content__image {
-    display: none;
-    width: 40%;
-    float: right;
-    margin-right: 0; }
-    .transfer .main-content__image img {
-      box-shadow: -25px 25px 0 -10px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2); }
+  background-position: top center; }
+  .transfer .main-content__image, .order-pass .main-content__image {
+    display: none; }
     @media (min-width: 68.75em) {
-      .transfer .main-content__image {
+      .transfer .main-content__image, .order-pass .main-content__image {
+        display: block; } }
+  @media (min-width: 68.75em) {
+    .transfer .main-content__content, .order-pass .main-content__content {
+      padding-top: 0; } }
+  @media (min-width: 87.5em) {
+    .transfer .main-content__content, .order-pass .main-content__content {
+      padding-top: 3em; } }
+
+.main-content-wrap {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2em; }
+  @media (min-width: 30em) {
+    .main-content-wrap {
+      padding: 3em; } }
+  @media (min-width: 53.125em) {
+    .main-content-wrap {
+      padding: 5.5em 3em;
+      border-bottom: none; } }
+  .main-content-wrap .main-content__image {
+    margin-bottom: 2em;
+    text-align: center;
+    max-height: 25em;
+    overflow: hidden; }
+    @media (min-width: 53.125em) {
+      .main-content-wrap .main-content__image {
+        margin-bottom: 0;
+        max-height: none;
+        overflow: visible;
+        width: 40%;
+        float: left;
+        margin-right: 2.85714%;
         display: block;
-        padding-top: 2em; } }
+        text-align: left; }
+        .main-content-wrap .main-content__image img {
+          box-shadow: -25px 25px 0 -10px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2); } }
+    @media (min-width: 68.75em) {
+      .main-content-wrap .main-content__image {
+        margin-left: 8.57143%; } }
     @media (min-width: 75em) {
-      .transfer .main-content__image {
+      .main-content-wrap .main-content__image {
         padding: 0; } }
-  .transfer .main-content__content {
+    @media (min-width: 53.125em) {
+      .main-content-wrap .main-content__image.image-right {
+        width: 40%;
+        float: right;
+        margin-right: 0; } }
+    @media (min-width: 68.75em) {
+      .main-content-wrap .main-content__image.image-right {
+        margin-right: 8.57143%; } }
+  .main-content-wrap .main-content__content {
     max-width: 46em;
     margin: auto; }
-    @media (min-width: 68.75em) {
-      .transfer .main-content__content {
-        width: 48.57143%;
+    @media (min-width: 53.125em) {
+      .main-content-wrap .main-content__content {
+        width: 40%;
         float: left;
         margin-right: 2.85714%; } }
-    @media (min-width: 87.5em) {
-      .transfer .main-content__content {
-        width: 40%;
+    @media (min-width: 64.0625em) {
+      .main-content-wrap .main-content__content {
+        padding-top: 3em; } }
+    @media (min-width: 68.75em) {
+      .main-content-wrap .main-content__content {
+        width: 31.42857%;
         float: left;
         margin-right: 2.85714%;
         margin-left: 8.57143%;
         padding-top: 3em; } }
+    @media (min-width: 53.125em) {
+      .main-content-wrap .main-content__content.content-right {
+        width: 40%;
+        float: right;
+        margin-right: 0;
+        margin-right: 8.57143%; } }
+    @media (min-width: 68.75em) {
+      .main-content-wrap .main-content__content.content-right {
+        width: 31.42857%;
+        float: right;
+        margin-right: 0;
+        margin-left: 0%;
+        margin-right: 8.57143%;
+        padding-top: 3em; } }
+    .main-content-wrap .main-content__content .content-title {
+      font-size: 13px; }
+      @media (min-width: 68.75em) {
+        .main-content-wrap .main-content__content .content-title {
+          font-size: 16px; } }
+  @media (min-width: 53.125em) {
+    .main-content-wrap .inner-content__wrap {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      width: 41.22137%; } }
+  @media (min-width: 68.75em) {
+    .main-content-wrap .inner-content__wrap {
+      width: 31.42857%; } }
+
+.transfer {
+  background-image: url("/vaujanyskicompany-com/_img/images/transfer-bg.jpg"); }
 
 .by-plane {
   background-size: cover;
@@ -4683,18 +4777,18 @@ GETTING HERE
     .by-plane .content-wrap a {
       text-decoration: underline; }
 
-table.plane-table {
+table.plane-table, table.vaujany-pass-table, table.alpeDHeuz-pass-table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
   margin: 2em 0; }
-  table.plane-table td, table.plane-table th {
+  table.plane-table td, table.plane-table th, table.vaujany-pass-table td, table.vaujany-pass-table th, table.alpeDHeuz-pass-table td, table.alpeDHeuz-pass-table th {
     padding: 0.5em;
     border: 1px solid rgba(255, 255, 255, 0.5); }
-  table.plane-table th {
+  table.plane-table th, table.vaujany-pass-table th, table.alpeDHeuz-pass-table th {
     font-family: "Montserrat-Regular", arial, sans-serif;
     background-color: rgba(255, 255, 255, 0.15); }
-  table.plane-table td {
+  table.plane-table td, table.vaujany-pass-table td, table.alpeDHeuz-pass-table td {
     font-family: "Overpass-Light", arial, sans-serif; }
 
 #getting-here__map {
@@ -4703,6 +4797,176 @@ table.plane-table {
 
 .map-banner {
   padding: 0; }
+
+/*///////////////////////////////////////
+
+Lift Passes
+
+///////////////////////////////////////*/
+.lift-passes {
+  position: relative; }
+  .lift-passes .inner-text {
+    text-align: center; }
+  .lift-passes .main-content__wrap {
+    max-width: 50em; }
+
+.pass-logos {
+  text-align: center; }
+  .pass-logos img {
+    max-width: 12em; }
+  @media (min-width: 78.125em) {
+    .pass-logos img {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      max-width: 12em; }
+      .pass-logos img:nth-child(1) {
+        right: 83%; }
+      .pass-logos img:nth-child(2) {
+        left: 83%; } }
+
+.order-pass {
+  background-image: url("/vaujanyskicompany-com/_img/images/order-pass-bg.jpg");
+  background-color: #fff; }
+
+.vaujany-pass .content-wrap, .alpeDHeuz-pass .content-wrap {
+  max-width: 50em;
+  margin: auto; }
+
+.vaujany-pass table, .alpeDHeuz-pass table {
+  font-size: 14px; }
+  @media (min-width: 30em) {
+    .vaujany-pass table, .alpeDHeuz-pass table {
+      font-size: 16px; } }
+  .vaujany-pass table p, .alpeDHeuz-pass table p {
+    line-height: 1.2; }
+
+.vaujany-pass .info, .alpeDHeuz-pass .info {
+  text-align: left; }
+  .vaujany-pass .info p, .alpeDHeuz-pass .info p {
+    margin: 0; }
+
+.vaujany-pass {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url("/vaujanyskicompany-com/_img/images/vaujany-pass.jpg");
+  background-color: #006da6; }
+  .vaujany-pass .content-wrap {
+    color: #fff; }
+    .vaujany-pass .content-wrap p, .vaujany-pass .content-wrap a {
+      color: #fff; }
+    .vaujany-pass .content-wrap a {
+      text-decoration: underline; }
+
+.alpeDHeuz-pass {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url("/vaujanyskicompany-com/_img/images/alpe-pass.jpg");
+  background-color: #fff; }
+
+table.alpeDHeuz-pass-table td, table.alpeDHeuz-pass-table th {
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+
+/*///////////////////////////////////////
+
+Summer
+
+///////////////////////////////////////*/
+@media (min-width: 53.125em) {
+  .summer-intro {
+    padding-bottom: 8.5em; } }
+
+.summer-intro .main-content__image {
+  position: relative; }
+  .summer-intro .main-content__image:before, .summer-intro .main-content__image:after {
+    content: "";
+    display: table; }
+  .summer-intro .main-content__image:after {
+    clear: both; }
+  .summer-intro .main-content__image img:nth-child(1) {
+    z-index: 2;
+    position: relative;
+    box-shadow: none; }
+    @media (min-width: 53.125em) {
+      .summer-intro .main-content__image img:nth-child(1) {
+        box-shadow: -3px 3px 0 3px #fff;
+        float: right;
+        width: 85%; } }
+  .summer-intro .main-content__image img:nth-child(2) {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    right: 78%;
+    top: 27%;
+    height: 90%;
+    width: auto;
+    box-shadow: -10px 10px 0 -3px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2); }
+    @media (min-width: 53.125em) {
+      .summer-intro .main-content__image img:nth-child(2) {
+        display: block; } }
+    @media (min-width: 53.125em) {
+      .summer-intro .main-content__image img:nth-child(2) {
+        box-shadow: -15px 15px 0 -3px rgba(0, 0, 0, 0.1), 0 5px 14px 0 rgba(0, 0, 0, 0.2); } }
+
+.road-cycling {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url("/vaujanyskicompany-com/_img/images/summer/road-cycling-bg.jpg");
+  background-color: #f9f9f9; }
+
+.mountain-cycling {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url("/vaujanyskicompany-com/_img/images/summer/mountain-biking-bg.jpg");
+  background-color: #003b59; }
+  .mountain-cycling h1, .mountain-cycling p {
+    color: #fff; }
+
+.family-banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url("/vaujanyskicompany-com/_img/images/summer/family-bg.jpg");
+  background-color: #f9f9f9; }
+
+@media (min-width: 40em) {
+  .family-activities .activity-panel {
+    -webkit-flex-basis: 33.3%;
+        -ms-flex-preferred-size: 33.3%;
+            flex-basis: 33.3%;
+    margin-bottom: 0; } }
+
+@media (min-width: 75em) {
+  .family-activities .activity-panel {
+    -webkit-flex-basis: 33.3%;
+        -ms-flex-preferred-size: 33.3%;
+            flex-basis: 33.3%; } }
+
+.no-flexbox .family-activities .activity-panel {
+  width: 100%; }
+  @media (min-width: 40em) {
+    .no-flexbox .family-activities .activity-panel {
+      float: left;
+      width: 33.3%; } }
+  @media (min-width: 75em) {
+    .no-flexbox .family-activities .activity-panel {
+      width: 33.3%; } }
+
+.activity-panel {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; }
+  .activity-panel.swimming {
+    background-image: url("/vaujanyskicompany-com/_img/images/summer/swimming-pool.jpg"); }
+  .activity-panel.skating {
+    background-image: url("/vaujanyskicompany-com/_img/images/summer/ice-rink.jpg"); }
+  .activity-panel.bowling {
+    background-image: url("/vaujanyskicompany-com/_img/images/summer/bowling.jpg"); }
 
 .chalet-header {
   position: relative;
@@ -5378,13 +5642,16 @@ table.plane-table {
 #s835284 .hero {
   background-image: url("/vaujanyskicompany-com/_img/images/getting-here-bg.jpg"); }
 
+#s911820 .hero {
+  background-image: url("/vaujanyskicompany-com/_img/images/lift-pass-bg.jpg"); }
+
 .blog-hero {
   position: relative; }
   .blog-hero header {
     position: relative;
-    background-color: rgba(17, 17, 17, 0.9); }
+    background-color: rgba(0, 59, 89, 0.9); }
   .blog-hero__content {
-    background-color: #003b59;
+    background-color: #006da6;
     padding: 3em 2em 2.8em; }
   .blog-hero__title {
     text-align: center;

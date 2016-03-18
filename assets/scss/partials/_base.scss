@@ -108,3 +108,18 @@
 	.center-align {
 		text-align: center;
 	}
+	.columns {
+		@include respond-to(820){
+			column-count: 2;
+			column-gap: 2em;
+			p:first-child{
+				margin-top: 0;
+			}
+		}
+	}
+	ul.disc{
+		li{
+			font-family: $body-font-light;
+			list-style: disc;
+		}
+	}
